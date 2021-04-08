@@ -2,16 +2,18 @@
 
 // I AM NOT DONE
 
+// Complete this function to return the factorial of num
+// Do not use:
+// - return
+// Try not to use:
+// - imperative style loops (for, while)
+// - additional variables
+// For an extra challenge, don't use:
+// - recursion
+// Execute `rustlings hint iterators4` for hints.
+//
 pub fn factorial(num: u64) -> u64 {
-    // Complete this function to return the factorial of num
-    // Do not use:
-    // - return
-    // Try not to use:
-    // - imperative style loops (for, while)
-    // - additional variables
-    // For an extra challenge, don't use:
-    // - recursion
-    // Execute `rustlings hint iterators4` for hints.
+    1..num.into_iter().reduce()
 }
 
 #[cfg(test)]

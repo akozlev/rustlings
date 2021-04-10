@@ -37,6 +37,25 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        if let "" = s {
+            Person::default()
+        } else {
+            let comma = s.find(',');
+            if let None = comma {
+                Person::default()
+            } else {
+                let (name, age) = s.split_at(comma.unwrap());
+                let age = age.parse::<usize>();
+                if let Err(e) = age {
+                    Person::default()
+                } else {
+                    Person {
+                        name: name.to_string(),
+                        age: age.unwrap(),
+                    }
+                }
+            }
+        }
     }
 }
 

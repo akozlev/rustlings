@@ -1,7 +1,5 @@
 // iterators4.rs
 
-// I AM NOT DONE
-
 // Complete this function to return the factorial of num
 // Do not use:
 // - return
@@ -13,7 +11,7 @@
 // Execute `rustlings hint iterators4` for hints.
 //
 pub fn factorial(num: u64) -> u64 {
-    1..num.into_iter().reduce()
+    (1..=num).into_iter().fold(1, |acc, x| acc * x)
 }
 
 #[cfg(test)]
